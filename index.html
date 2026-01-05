@@ -105,7 +105,7 @@
             align-items: center;
         }
 
-        /* Logo Styling - CSS Trick to recolor PNG */
+        /* Logo Styling */
         .logo-link {
             display: block;
             height: 50px;
@@ -473,22 +473,17 @@
 
         .music-frame-container {
             margin-bottom: 10px;
-            display: none; /* Hidden by default */
+            display: block; /* Attempt to show by default to encourage interaction */
             border: 4px solid var(--accent-color);
             border-radius: 8px;
             overflow: hidden;
             width: 280px;
             background: #000;
+            transition: opacity 0.5s ease;
         }
 
-        .music-frame-container.active {
-            display: block;
-            animation: fadeIn 0.3s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .music-frame-container.hidden {
+            display: none;
         }
 
         /* =========================================
@@ -757,9 +752,9 @@
 
     <div class="music-widget">
         <div class="music-frame-container" id="musicContainer">
-            <iframe width="100%" height="155" src="https://www.youtube.com/embed/NFsEqOBG51M?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="100%" height="155" src="https://www.youtube.com/embed/NFsEqOBG51M?controls=1&autoplay=1&loop=1&playlist=NFsEqOBG51M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-        <div class="music-toggle" onclick="toggleMusic()" title="Play Music">
+        <div class="music-toggle" onclick="toggleMusic()" title="Play/Hide Music">
             🎵
         </div>
     </div>
@@ -832,7 +827,12 @@
         // 4. Toggle Music Widget
         function toggleMusic() {
             const container = document.getElementById('musicContainer');
-            container.classList.toggle('active');
+            // Simply toggle visibility
+            if (container.style.display === 'none' || container.style.display === '') {
+                container.style.display = 'block';
+            } else {
+                container.style.display = 'none';
+            }
         }
     </script>
 </body>
