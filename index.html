@@ -226,6 +226,8 @@
             letter-spacing: 4px;
             text-transform: uppercase;
             font-weight: 300;
+            color: #FFFFFF !important; /* CHANGED: Forced White */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
         /* Countdown */
@@ -251,7 +253,8 @@
             font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            opacity: 0.8;
+            opacity: 0.9;
+            color: #FFFFFF;
         }
 
         /* =========================================
@@ -296,33 +299,6 @@
             object-fit: cover;
             border-radius: 4px;
             box-shadow: 10px 10px 0px rgba(212, 175, 55, 0.2);
-        }
-
-        /* =========================================
-           GALLERY
-           ========================================= */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-item {
-            overflow: hidden;
-            position: relative;
-            height: 400px;
-            border-radius: 2px;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
         }
 
         /* =========================================
@@ -463,6 +439,18 @@
 
         .rsvp-btn:hover { background: #500a13; }
 
+        .insta-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .insta-link:hover {
+            color: var(--primary-color);
+        }
+
         footer {
             background: #222;
             color: #888;
@@ -576,7 +564,6 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#story">Our Story</a></li>
-                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#events">Events</a></li>
                 <li><a href="#venue">Venue</a></li>
                 <li><a href="#registry">Registry</a></li>
@@ -636,18 +623,6 @@
         </div>
     </section>
 
-    <section id="gallery" style="background: white;">
-        <div class="container">
-            <div class="section-divider">Captured Moments</div>
-            <div class="gallery-grid reveal">
-                <div class="gallery-item"><img src="IMG_4940.JPG" loading="lazy"></div>
-                <div class="gallery-item"><img src="IMG_5168.JPG" loading="lazy"></div>
-                <div class="gallery-item"><img src="IMG_6023.JPG" loading="lazy"></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=600&q=80" loading="lazy"></div> 
-            </div>
-        </div>
-    </section>
-
     <section id="events">
         <div class="container">
             <div class="section-divider">The Celebrations</div>
@@ -702,10 +677,14 @@
                     <p style="font-size: 1.2rem; color: var(--primary-color); margin-bottom: 2rem;">Greater Noida, Uttar Pradesh</p>
                     <p>A luxurious oasis blending modern amenities with traditional charm. Perfect for our big fat Indian wedding.</p>
                     <br>
-                    <a href="https://goo.gl/maps/placeholder" target="_blank" class="enter-btn" style="padding: 10px 30px; font-size: 1rem;">Get Directions</a>
+                    <a href="https://maps.app.goo.gl/YourMapLinkHere" target="_blank" class="enter-btn" style="padding: 10px 30px; font-size: 1rem;">Get Directions</a>
                 </div>
                 <div class="venue-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.636603957262!2d77.5029!3d28.4905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc76566088339%3A0x6c637b3149524029!2sStellar%20Gymkhana!5e0!3m2!1sen!2sin!4v1700000000000" loading="lazy"></iframe>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.667688537609!2d77.50974867549448!3d28.460838675758836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc1d5f2a1b95f%3A0x6c6e3d23f3f5e1a!2sStellar%20Gymkhana!5e0!3m2!1sen!2sin!4v1704456000000!5m2!1sen!2sin" 
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -727,14 +706,18 @@
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSf2VCQRQ3dSgpRG2p3rMYlc06jBtLu6vWJJ51WkF1eg913wgA/viewform" class="rsvp-btn" target="_blank">RSVP Now</a>
                 
                 <div style="margin-top: 3rem;">
-                    <p class="script-font" style="font-size: 2rem;">#ShriGotAdicted</p>
+                    <p class="script-font" style="font-size: 2.5rem;">#ShriGotAdicted</p>
+                    
+                    <a href="https://www.instagram.com/shrigotadicted" target="_blank" class="insta-link">
+                       📷 @shrigotadicted
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Aditya & Shriya. Forever Begins Now.</p>
+        <p>© 2026 Aditya & Shriya. Forever Begins Now.</p>
     </footer>
 
     <div class="music-widget">
@@ -768,7 +751,6 @@
         }
 
         // 3. MUSIC & WELCOME LOGIC
-        // We inject the iframe only after user clicks "Enter" to ensure autoplay works
         var playerContainer = document.getElementById('video-container');
         var musicDisc = document.getElementById('music-toggle');
         var isPlaying = false;
@@ -779,7 +761,6 @@
             setTimeout(() => { overlay.style.display = 'none'; }, 800);
             
             // Inject YouTube Iframe with Autoplay
-            // Using a playlist of the same video ensures looping
             playerContainer.innerHTML = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/NFsEqOBG51M?autoplay=1&loop=1&playlist=NFsEqOBG51M&controls=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
             
             musicDisc.classList.add('playing');
