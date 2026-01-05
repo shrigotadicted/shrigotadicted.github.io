@@ -116,8 +116,7 @@
             height: 100%;
             width: auto;
             display: block;
-            /* The Trick: Create a maroon shadow 100px below, then shift the image up 100px.
-               This hides the original image and shows only the maroon shadow. */
+            /* The Trick: Create a maroon shadow 100px below, then shift the image up 100px. */
             filter: drop-shadow(0px 100px 0px var(--primary-color));
             transform: translateY(-100px);
         }
@@ -216,6 +215,21 @@
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
+        }
+
+        .story-container h3 {
+            color: var(--primary-color);
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            font-family: var(--font-heading);
+        }
+
+        .story-container p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #555;
         }
 
         /* New Gallery Grid */
@@ -500,8 +514,24 @@
                 <span></span>
             </div>
             <div class="story-container">
-                <p style="font-size: 1.2rem; line-height: 2;">
-                    It started with a cup of coffee. What was supposed to be a quick meet-up turned into hours of conversation about travel, food, and the future. From long drives to discovering new cafes, our journey has been nothing short of magical. We are so excited to start this new chapter of our lives together and cannot wait to celebrate our special day with our favorite people.
+                <h3>Our Bollywood Beginning</h3>
+                <p>
+                    It all started with a simple cup of coffee and a conversation that we didn’t want to end. What was meant to be a quick one-day meet-up quickly transformed into a whirlwind, week-long affair—a real-life tribute to Maddy and Reena from <em>Rehna Hai Tere Dil Mein</em>. Right then and there, in the middle of our very own Bollywood moment, we knew this wasn't just a chance encounter; it was the start of a grand adventure.
+                </p>
+
+                <h3>Love Across State Lines</h3>
+                <p>
+                    Life soon tested our spirit as we navigated the 1,700 miles between Austin and Sunnyvale. Distance became our backdrop, but it never slowed us down. Our relationship flourished through endless WhatsApp video calls, creative "online dates," and surprise gifts that crossed time zones. Every notification on our phones was a reminder that no matter how many miles lay between Texas and California, we were always moving in the same direction.
+                </p>
+
+                <h3>From "Yes" to "I Do"</h3>
+                <p>
+                    The ultimate surprise arrived on October 4th, just as Shriya was preparing to celebrate her birthday. Aditya took the leap and proposed, turning a birthday wish into a lifelong promise. With a resounding "YES!" the celebrations moved from the U.S. to the heart of India. By November, we were surrounded by the warmth of our families for our Roka, officially blending our two worlds into one.
+                </p>
+
+                <h3>The Next Great Chapter</h3>
+                <p>
+                    Now, we are ready to trade the long-distance flights for a permanent front-row seat to each other's lives. We are so incredibly excited to begin this new chapter and can’t wait to celebrate our special day with the people who have cheered us on every step of the way. Get ready—the best is yet to come!
                 </p>
             </div>
         </div>
@@ -641,7 +671,7 @@
             <a href="#" class="rsvp-btn" target="_blank">RSVP Now</a>
 
             <div class="share-section" style="margin-top: 4rem; border: none; background: transparent;">
-                <span class="hashtag">#AdityaWedsShriya</span>
+                <span class="hashtag">#ShriGotAdicted</span>
                 <button class="copy-btn" id="shareBtn" onclick="copyToClipboard()">
                     Copy Website Link
                 </button>
