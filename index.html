@@ -356,6 +356,25 @@
             font-size: 1.1rem;
         }
 
+        /* Venmo Button */
+        .venmo-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 1.5rem;
+            transition: transform 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .venmo-btn:hover {
+            transform: scale(1.05);
+            background-color: #b08d3e;
+        }
+
         #rsvp {
             text-align: center;
             background: linear-gradient(to bottom, var(--bg-color), #fff);
@@ -656,6 +675,10 @@
                 <p>Your presence at our wedding is the greatest gift of all. However, if you wish to honor us with a gift, a contribution towards our honeymoon would be warmly appreciated.</p>
                 <br>
                 <p><em>(No Boxed Gifts Please)</em></p>
+                
+                <a href="https://venmo.com/aditya2garg" class="venmo-btn" target="_blank">
+                    Contribute via Venmo (@aditya2garg)
+                </a>
             </div>
         </div>
     </section>
