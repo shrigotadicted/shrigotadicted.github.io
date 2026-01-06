@@ -162,11 +162,19 @@
         }
 
         .logo {
-            font-family: var(--font-script);
-            font-size: 2rem;
-            color: var(--primary-color);
             text-decoration: none;
             padding-left: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            /* MAROON BACKGROUND FOR LOGO */
+            background-color: var(--primary-color); 
+            padding: 5px;
+            border-radius: 4px;
         }
 
         .nav-links {
@@ -291,6 +299,7 @@
         .story-img {
             flex: 1;
             height: 400px;
+            position: relative; /* Needed for carousel absolute positioning */
         }
         
         .story-img img {
@@ -299,6 +308,25 @@
             object-fit: cover;
             border-radius: 4px;
             box-shadow: 10px 10px 0px rgba(212, 175, 55, 0.2);
+        }
+
+        /* CAROUSEL STYLES (FADE) */
+        .carousel-fade {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .carousel-fade img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .carousel-fade img.active {
+            opacity: 1;
         }
 
         /* =========================================
@@ -559,7 +587,10 @@
 
     <nav>
         <div class="container nav-container">
-            <a href="#hero" class="logo">A & S</a>
+            <a href="#hero" class="logo">
+                <img src="Aditya & Shriya Logo.png" alt="A & S Logo">
+            </a>
+            
             <div class="hamburger" onclick="toggleMenu()">☰</div>
             <ul class="nav-links" id="nav-links">
                 <li><a href="#hero">Home</a></li>
@@ -597,7 +628,7 @@
                     <p>It started with a simple cup of coffee and a conversation we didn’t want to end. What was meant to be a quick meet-up turned into a whirlwind week—our own <em>Rehna Hai Tere Dil Mein</em> moment.</p>
                 </div>
                 <div class="story-img">
-                    <img src="IMG_4940.JPG" alt="First Meet">
+                    <img src="IMG_5884.jpg" alt="The Bollywood Beginning">
                 </div>
             </div>
 
@@ -607,7 +638,7 @@
                     <p>1,700 miles between Austin and Sunnyvale couldn't keep us apart. Through video calls and flights across time zones, we built a love that knew no distance.</p>
                 </div>
                 <div class="story-img">
-                    <img src="IMG_5168.JPG" alt="Long Distance">
+                    <img src="IMG_3169.jpg" alt="Love Across Miles">
                 </div>
             </div>
 
@@ -617,7 +648,11 @@
                     <p>On October 4th, a birthday wish turned into a lifelong promise. Aditya got down on one knee, and the celebrations moved from the US to India for our Roka.</p>
                 </div>
                 <div class="story-img">
-                    <img src="IMG_6023.JPG" alt="Proposal">
+                    <div class="carousel-fade">
+                        <img src="IMG_4940.JPG" class="active" alt="Proposal 1">
+                        <img src="IMG_5168.JPG" alt="Proposal 2">
+                        <img src="IMG_6023.JPG" alt="Proposal 3">
+                    </div>
                 </div>
             </div>
         </div>
@@ -791,6 +826,18 @@
             document.getElementById("minutes").innerText = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
             document.getElementById("seconds").innerText = Math.floor((dist % (1000 * 60)) / 1000).toString().padStart(2, '0');
         }, 1000);
+
+        // 5. CAROUSEL AUTO-SLIDER
+        const carouselImages = document.querySelectorAll('.carousel-fade img');
+        let currentSlide = 0;
+
+        if(carouselImages.length > 0) {
+            setInterval(() => {
+                carouselImages[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % carouselImages.length;
+                carouselImages[currentSlide].classList.add('active');
+            }, 3000); // Change image every 3 seconds
+        }
     </script>
 </body>
 </html>
