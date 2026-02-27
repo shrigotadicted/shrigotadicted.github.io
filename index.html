@@ -523,9 +523,18 @@
             justify-content: center;
             align-items: center;
         }
-        #instagram .elfsight-app-23ad204c-9a83-4e5b-9b9a-c4aacfae806d {
-            margin: 0 auto;
-            display: block;
+        /* Force Elfsight widget and its iframe to center (overrides widget's inline styles) */
+        #instagram .elfsight-app-23ad204c-9a83-4e5b-9b9a-c4aacfae806d,
+        #instagram .elfsight-app-23ad204c-9a83-4e5b-9b9a-c4aacfae806d > * {
+            margin-left: auto !important;
+            margin-right: auto !important;
+            display: block !important;
+            float: none !important;
+        }
+        #instagram iframe {
+            margin-left: auto !important;
+            margin-right: auto !important;
+            display: block !important;
         }
 
         footer {
