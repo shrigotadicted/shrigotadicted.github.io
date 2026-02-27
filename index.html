@@ -308,6 +308,12 @@
             box-shadow: 10px 10px 0px rgba(212, 175, 55, 0.2);
         }
 
+        /* Tall images: show full image without cropping */
+        .story-img--contain img {
+            object-fit: contain;
+            object-position: center;
+        }
+
         /* Carousel Styles */
         .carousel-fade {
             width: 100%;
@@ -729,7 +735,7 @@
                     <h3>Love Across Miles</h3>
                     <p>1,700 miles between Austin and Sunnyvale couldn't keep us apart. Through video calls and flights across time zones, we built a love that knew no distance.</p>
                 </div>
-                <div class="story-img">
+                <div class="story-img story-img--contain">
                     <img src="IMG_7505.JPG" alt="Love Across Miles">
                 </div>
             </div>
