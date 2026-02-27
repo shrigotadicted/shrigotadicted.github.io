@@ -307,15 +307,21 @@
             border-radius: 4px;
             box-shadow: 10px 10px 0px rgba(212, 175, 55, 0.2);
         }
+        .story-img--no-shadow img {
+            box-shadow: none;
+        }
 
         /* Tall images: show full image without cropping; match page background, no grey frame */
         .story-img--contain {
             background-color: var(--bg-color);
+            border-radius: 12px;
+            overflow: hidden;
         }
         .story-img--contain img {
             object-fit: contain;
             object-position: center;
             box-shadow: none;
+            border-radius: 12px;
         }
 
         /* Carousel Styles */
@@ -729,7 +735,7 @@
                     <h3>The Bollywood Beginning</h3>
                     <p>It started with a simple cup of coffee and a conversation we didn’t want to end. What was meant to be a quick meet-up turned into a whirlwind week—our own <em>Rehna Hai Tere Dil Mein</em> moment.</p>
                 </div>
-                <div class="story-img">
+                <div class="story-img story-img--no-shadow">
                     <img src="IMG_5884.jpg" alt="The Bollywood Beginning">
                 </div>
             </div>
