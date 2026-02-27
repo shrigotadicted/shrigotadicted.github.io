@@ -308,10 +308,14 @@
             box-shadow: 10px 10px 0px rgba(212, 175, 55, 0.2);
         }
 
-        /* Tall images: show full image without cropping */
+        /* Tall images: show full image without cropping; match page background, no grey frame */
+        .story-img--contain {
+            background-color: var(--bg-color);
+        }
         .story-img--contain img {
             object-fit: contain;
             object-position: center;
+            box-shadow: none;
         }
 
         /* Carousel Styles */
