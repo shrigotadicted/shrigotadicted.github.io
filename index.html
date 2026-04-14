@@ -11,7 +11,7 @@
 
     <style>
         /* =========================================
-           CSS VARIABLES & RESET
+            CSS VARIABLES & RESET
            ========================================= */
         :root {
             --primary-color: #700F1C; /* Deep Burgundy */
@@ -48,7 +48,7 @@
         }
 
         /* =========================================
-           TYPOGRAPHY
+            TYPOGRAPHY
            ========================================= */
         h1, h2, h3 {
             font-family: var(--font-heading);
@@ -71,7 +71,7 @@
         p { font-weight: 300; color: var(--text-light); }
 
         /* =========================================
-           UTILITIES & LAYOUT
+            UTILITIES & LAYOUT
            ========================================= */
         .container {
             max-width: 1200px;
@@ -106,7 +106,7 @@
         }
 
         /* =========================================
-           WELCOME OVERLAY
+            WELCOME OVERLAY
            ========================================= */
         #welcome-overlay {
             position: fixed;
@@ -141,7 +141,7 @@
         }
 
         /* =========================================
-           NAVIGATION
+            NAVIGATION
            ========================================= */
         nav {
             position: fixed;
@@ -203,7 +203,7 @@
         }
 
         /* =========================================
-           HERO SECTION
+            HERO SECTION
            ========================================= */
         #hero {
             height: 100vh;
@@ -262,7 +262,7 @@
         }
 
         /* =========================================
-           OUR STORY
+            OUR STORY
            ========================================= */
         .story-item {
             display: flex;
@@ -350,7 +350,7 @@
         }
 
         /* =========================================
-           EVENTS
+            EVENTS
            ========================================= */
         #events { background: white; }
         
@@ -408,6 +408,7 @@
 
             .event-card:hover h3, 
             .event-card:hover .event-meta,
+            .event-card:hover .event-hall,
             .event-card:hover .event-details div,
             .event-card:hover .event-details p {
                 color: #FFFFFF !important;
@@ -427,8 +428,18 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-bottom: 0.2rem;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        .event-hall {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--accent-color);
             margin-bottom: 1.5rem;
             display: block;
+            font-weight: 600;
             transition: color 0.3s ease;
         }
 
@@ -439,7 +450,7 @@
         }
 
         /* =========================================
-           VENUE & REGISTRY & RSVP
+            VENUE & REGISTRY & RSVP
            ========================================= */
         .venue-wrapper {
             display: flex;
@@ -564,7 +575,7 @@
         }
 
         /* =========================================
-           MUSIC WIDGET
+            MUSIC WIDGET
            ========================================= */
         .music-widget {
             position: fixed;
@@ -621,7 +632,7 @@
         }
 
         /* =========================================
-           RESPONSIVE (MOBILE)
+            RESPONSIVE (MOBILE)
            ========================================= */
         @media (max-width: 768px) {
             /* HERO FIX: Force scroll to show image on iPhone */
@@ -676,6 +687,7 @@
             
             .event-card h3, 
             .event-card .event-meta,
+            .event-card .event-hall,
             .event-card .event-details div,
             .event-card .event-details p {
                 color: #FFFFFF !important;
@@ -773,6 +785,7 @@
                 
                 <div class="event-card" style="--bg-image: url('Sagaai.png');">
                     <span class="event-meta">June 21st • 12:00 PM</span>
+                    <span class="event-hall">Magnolia Hall</span>
                     <h3>Sagaai</h3>
                     <div class="event-details">
                         <div>Traditional / Jodhpuri & Rajputana</div>
@@ -781,7 +794,8 @@
                 </div>
 
                 <div class="event-card" style="--bg-image: url('Sangeet.png');">
-                    <span class="event-meta">June 21st • 8:00 PM</span>
+                    <span class="event-meta">June 21st • 7:00 PM</span>
+                    <span class="event-hall">Magnolia Hall</span>
                     <h3>Sangeet</h3>
                     <div class="event-details">
                         <div>Indo-Western / Glitz & Glam</div>
@@ -791,15 +805,17 @@
 
                 <div class="event-card" style="--bg-image: url('Haldi.png');">
                     <span class="event-meta">June 22nd • 10:00 AM</span>
+                    <span class="event-hall">Daffodil Hall</span>
                     <h3>Haldi</h3>
                     <div class="event-details">
-                        <div>Yellow or Orange Attire</div>
+                        <div>Mint, Light Blue, Peach Attire</div>
                         <p>Blessing the couple with turmeric and love.</p>
                     </div>
                 </div>
 
                 <div class="event-card" style="--bg-image: url('Shaadi.png');">
                     <span class="event-meta">June 22nd • 5:00 PM</span>
+                    <span class="event-hall">Clover Hall</span>
                     <h3>The Wedding</h3>
                     <div class="event-details">
                         <div>Traditional Indian</div>
@@ -820,7 +836,7 @@
                     <p style="font-size: 1.2rem; color: var(--primary-color); margin-bottom: 2rem;">Greater Noida, Uttar Pradesh</p>
                     <p>A luxurious oasis blending modern amenities with traditional charm. Perfect for our big fat Indian wedding.</p>
                     <br>
-                    <a href="https://www.google.com/maps/search/?api=1&query=28.462044085319427,77.50395382460118" target="_blank" class="enter-btn" style="padding: 10px 30px; font-size: 1rem;">Get Directions</a>
+                    <a href="https://maps.app.goo.gl/vS1FvWJid9kFpXh89" target="_blank" class="enter-btn" style="padding: 10px 30px; font-size: 1rem;">Get Directions</a>
                 </div>
                 <div class="venue-map">
                     <iframe 
@@ -830,7 +846,7 @@
                         scrolling="no" 
                         marginheight="0" 
                         marginwidth="0" 
-                        src="https://maps.google.com/maps?q=28.462044085319427,77.50395382460118&t=&z=15&ie=UTF8&iwloc=&output=embed">
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.6329437299383!2d77.5147915!3d28.4891295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cea6505e60d03%3A0x1d436154e1763134!2sThe%20Stellar%20Gymkhana!5e0!3m2!1sen!2sus!4v1711311000000!5m2!1sen!2sus">
                     </iframe>
                 </div>
             </div>
@@ -856,7 +872,7 @@
                     <p class="script-font" style="font-size: 2.5rem;">#ShriGotAdicted</p>
                     
                     <a href="https://www.instagram.com/shrigotadicted" target="_blank" class="insta-link">
-                       📷 @shrigotadicted
+                        📷 @shrigotadicted
                     </a>
                 </div>
             </div>
@@ -884,7 +900,6 @@
         </div>
     </div>
 
-    <!-- Elfsight Social Feed | Untitled Social Feed -->
     <script src="https://elfsightcdn.com/platform.js" async></script>
 
     <script>
@@ -959,15 +974,12 @@
         }
 
         // 6. GEO-LOCATION REGISTRY HIDE/SHOW
-        // Using api.country.is which is free and supports HTTPS (Required for Github Pages)
         fetch('https://api.country.is')
             .then(response => response.json())
             .then(data => {
-                // If country is US, show the registry section
                 if (data && data.country === 'US') {
                     document.getElementById('registry').style.display = 'block';
                 } else {
-                    // If not US, hide the link in the navbar so users don't see it
                     const registryLink = document.querySelector('a[href="#registry"]');
                     if (registryLink) {
                         registryLink.parentElement.style.display = 'none';
